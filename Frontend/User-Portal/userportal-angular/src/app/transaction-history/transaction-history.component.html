@@ -1,0 +1,68 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<nav class="navbar navbar-expand-sm  navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/home">ICIN Bank</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample04">
+    <ul class="navbar-nav mr-auto">
+      
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/transactionHistory">Transaction History<span class="sr-only"></span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/transferHistory">Transfer History<span class="sr-only"></span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/transfer">Transfer Money<span class="sr-only"></span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/chequebookRequest">Request Checkbook<span class="sr-only"></span></a>
+      </li>
+
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User Session</a>
+        <div class="dropdown-menu"  aria-labelledby="dropdown04">
+          <a class="dropdown-item" routerLink="/editProfile" >Change Profile Settings</a>
+          <a class="dropdown-item" routerLink="/login">Logout</a>
+        </div>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+<br>
+<h3 style="text-align: center;">Transaction History</h3>
+<br>
+
+  <h4 style="padding-left: 1rem;">Type of account: Saving </h4><br>
+  <h4 style="padding-left: 1rem;">Saving balance : {{savingBalance}} </h4><br>
+  <h4 style="padding-left: 1rem;">Account number :{{accNo}} </h4><br>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: center;">Date</th>
+      <th style="text-align: center;">Transaction Id</th>
+      <th style="text-align: center;">Action Type</th>
+      <th style="text-align: center;">Amount </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactionList">
+      <td  style="text-align: center;">{{transaction.date}}</td>
+      <td  style="text-align: center;">{{transaction.id}}</td>
+      <td  style="text-align: center;">{{transaction.action}}</td>
+      <td  style="text-align: center;">{{transaction.amount}}</td>
+     
+    </tr>
+
+      
+  </tbody>
+</table>

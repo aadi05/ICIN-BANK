@@ -1,0 +1,110 @@
+
+<div class="container">
+
+<form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+  <div class="col-xs-4" style="left:40%;">
+    <br>
+    <h3 style="text-align: center;">User Registration</h3>
+    <br>
+
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.firstName.errors }" placeholder="Enter First Name here"/>
+        <div *ngIf="submitted && fval.firstName.errors" class="invalid-feedback">
+            <div *ngIf="fval.firstName.errors.required">First Name is required</div>
+        </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control"  [ngClass]="{ 'is-invalid': submitted && fval.lastName.errors }" placeholder="Enter Last Name"/>
+        <div *ngIf="submitted && fval.lastName.errors" class="invalid-feedback">
+          <div *ngIf="fval.lastName.errors.required">LastName is required</div>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label for="userName">Username</label>
+        <input type="text" formControlName="userName" class="form-control"  [ngClass]="{ 'is-invalid': submitted && fval.userName.errors }" placeholder="Enter User Name"/>
+        <div *ngIf="submitted && fval.userName.errors" class="invalid-feedback">
+          <div *ngIf="fval.userName.errors.required">UserName is required</div>
+      </div>
+  </div>
+
+
+ 
+
+  <div class="form-group">
+    <label for="password"> Password</label>
+    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.password.errors }" placeholder="Enter Password here"/>
+    <div *ngIf="submitted && fval.password.errors" class="invalid-feedback">
+        <div *ngIf="fval.password.errors.required">Password is required</div>
+        <div *ngIf="fval.password.errors.minlength">Password must be at least 8 scharacters</div>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <label for="dob">DOB</label>
+      <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.dob.errors }"/>
+      <div *ngIf="submitted && fval.dob.errors" class="invalid-feedback">
+          <div *ngIf="fval.dob.errors.required">Date of Birth is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Mobile No</label>
+      <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.phone.errors }" placeholder="Enter Phone here"/>
+      <div *ngIf="submitted && fval.phone.errors" class="invalid-feedback">
+          <div *ngIf="fval.phone.errors.required">Phone is required</div>
+      </div>
+    </div>
+
+      <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.address.errors }" placeholder="Enter your Address"/>
+      <div *ngIf="submitted && fval.address.errors" class="invalid-feedback">
+          <div *ngIf="fval.address.errors.required">Address is required</div>
+      </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="type">Choose ID Type:</label>
+      <select class="form-control" formControlName="identityType" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.identityType.errors.required }" (change) = "filterSelected($event.target.value)" >
+        <option *ngFor="let t of identityType" [value]='t.value'>
+          {{t.name}}
+        </option>
+      </select>
+      </div>
+
+      <div class="form-group">
+        <label for="file">Upload your Id proof copy</label>
+        <input type="file" formControlName="file" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.file.errors }" />
+        <div *ngIf="submitted && fval.file.errors" class="invalid-feedback">
+          <div *ngIf="fval.file.errors.required">Required</div>
+      </div>
+      </div>      
+
+      <div class="form-group">
+        <label for="identity">Enter Id Proof no:</label>
+        <input type="text" formControlName="identity" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.identity.errors }" placeholder="Enter Id Proof no: "/>
+        <div *ngIf="submitted && fval.identity.errors" class="invalid-feedback">
+          <div *ngIf="fval.identity.errors.required">Required</div>
+      </div>
+      </div>
+
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.email.errors }" placeholder="Enter email here"/>
+    <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">
+        <div *ngIf="fval.email.errors.required">Email is required</div>
+        <div *ngIf="fval.email.errors.email">Enter valid email address</div>
+    </div>
+  </div>
+
+  <div class="center1" style="text-align:center;">
+  <button class="btn btn-primary">Register</button>
+</div>
+
+</div>
+</form>
+</div>

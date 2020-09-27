@@ -1,0 +1,34 @@
+
+
+<div class="container">
+<form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+    <br>
+    <br>
+    <h3 style="text-align: center;">User Portal</h3>
+    <br>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.username.errors }" placeholder="Enter Username"/>
+        <div *ngIf="submitted && fval.username.errors" class="invalid-feedback">
+            <div *ngIf="fval.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.password.errors }" placeholder="Enter password here" />
+        <div *ngIf="submitted && fval.password.errors" class="invalid-feedback">
+            <div *ngIf="fval.password.errors.required">Please enter a Password</div>
+        </div>
+    </div>
+
+    
+
+    <div class="form-group" style="text-align:center;">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+        <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+</form>
+</div>

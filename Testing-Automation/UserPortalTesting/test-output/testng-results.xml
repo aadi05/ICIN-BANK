@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="23719" started-at="2020-08-17T19:28:39 IST" finished-at="2020-08-17T19:29:03 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="23719" started-at="2020-08-17T19:28:39 IST" finished-at="2020-08-17T19:29:03 IST">
+      <class name="UserActions.EditProfile">
+        <test-method status="PASS" signature="EditPorfile()[pri:0, instance:UserActions.EditProfile@3a883ce7]" name="EditPorfile" duration-ms="23653" started-at="2020-08-17T19:28:39 IST" finished-at="2020-08-17T19:29:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EditPorfile -->
+      </class> <!-- UserActions.EditProfile -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
