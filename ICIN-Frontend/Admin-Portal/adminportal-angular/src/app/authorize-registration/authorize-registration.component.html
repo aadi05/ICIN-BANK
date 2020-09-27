@@ -1,0 +1,32 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="alignment">First Name</th>
+      <th class="alignment">Last Name</th>
+      <th class="alignment">Phone Number</th>
+      <th class="alignment">Address</th>
+      <th class="alignment">Date of Birth</th>
+      <th class="alignment">Type of Verification Document</th>
+      <th class="alignment">Verification ID No.</th>
+      <th class="alignment">Email</th>
+      <th class="alignment">Create Account</th>
+      <th class="alignment">Cancel Account Creation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let authorizeuser of authorizeusers">
+      <td class="alignment">{{authorizeuser.fname}}</td>
+      <td class="alignment">{{authorizeuser.lname}}</td>
+      <td class="alignment">{{authorizeuser.phone}}</td>
+      <td class="alignment">{{authorizeuser.address}}</td>
+      <td class="alignment">{{authorizeuser.dob}}</td>
+      <td class="alignment">{{authorizeuser.identityType}}</td>
+      <td class="alignment">{{authorizeuser.identity}}</td>
+      <td class="alignment">{{authorizeuser.email}}</td>
+      <td class="alignment"><button type="button" class="btn btn-success" (click)="authorizeAccount(authorizeuser.username)">Create</button> </td> 
+      <td class="alignment"><button type="button" class="btn btn-danger"(click)="rejectRequest(authorizeuser.username)">Cancel</button></td>
+    </tr>
+
+  
+  </tbody>
+</table>
